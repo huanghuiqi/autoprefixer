@@ -24,6 +24,23 @@ a {
     display : flex
 }
 ```
-##具体的安装和配置   
+##在Webstorm上具体的安装和配置   
 
-####第一步：安装autoprefixer
+####第一步：安装 autoprefixer
+```
+     npm install autoprefixer -g
+```
+####第二步：安装 postcss-cli
+```
+     npm install postcss-cli =g
+```
+####第三步：配置External Tools
+     打开Webstorm设置，Preferences -> Tools -> External Tools 点击新增按钮
+
+####第四步：填写具体配置
+     1、Name : autoprefixer
+     2、Program : 填入你的postcss-cli 的PATH 例：C:\Users\Administrator\AppData\Roaming\npm\postcss.cmd
+     3、Parameters :　-u autoprefixer -o $FileDir$\$FileName$ $FileDir$\$FileName$
+     4、Working directory : $ProjectFileDir$
+     
+配置好后，你可以在css，或sass文件中右键，就可以在右键菜单中看到External Tools – autoprefixer，点击搞定~
